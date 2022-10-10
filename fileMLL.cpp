@@ -526,6 +526,27 @@ void findAndShowInventoryWithStockMoreThanX(myList data, string ID, int X) {
     }
 }
 
+void showAllInventory(myList data, string ID) {
+    adrWarehouse W = findElmentWarehouse(data, ID);
+
+    if (W == NULL) {
+        cout << "Data not found" << endl;
+    } else {
+        adrInventory I = W->firstInventory;
+
+        while (I != NULL) {
+            cout << "====================================================" << endl;
+            cout << "Inventory Name: " << I->info.inventoryName << endl;
+            cout << "Code          : " << I->info.code << endl;
+            cout << "Price         : " << upgradePrice(data, W, I) << endl;
+            cout << "Stock         : " << I->info.stock << endl;
+            cout << "====================================================" << endl;
+            cout << endl;
+            I = I->next;
+        }
+    }
+}
+
 // part of execution
 
 int menu() {

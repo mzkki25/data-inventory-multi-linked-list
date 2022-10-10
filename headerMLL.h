@@ -82,6 +82,8 @@ void findAndShowInventory(myList data, string ID, string code);
 void findAndShowInventoryWithPriceMoreThanX(myList data, string ID, int X);
 void findAndShowInventoryWithStockMoreThanX(myList data, string ID, int X);
 
+void showAllInventory(myList data, string ID);
+
 // part of execution
 int menu();
 
